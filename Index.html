@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reudis Muñoz | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    header {
+		padding: 40px;
+		text-align: center;
+		background: linear-gradient(135deg, #020617, #0f172a, #1e3a8a);
+		}
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    header p {
+      color: #94a3b8;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    nav a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+	
+	 .lang-toggle button {
+      background: transparent; border:1px solid #38bdf8; color:#38bdf8;
+      padding:5px 10px; margin:5px; border-radius:6px; cursor:pointer;
+    }
+
+    .lang-toggle button:hover { background:#38bdf8; color:black; }
+	
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: #020617;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+	
+	.card.expirience{
+	 background: linear-gradient(135deg, #020617, #1e293b);
+	}
+	
+	.card.cert{
+	 background: linear-gradient(135deg, #020617, #4c1d95);
+	}
+	
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project {
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.6);
+    }
+
+    /* Color variations */
+    .project.lab {
+      background: linear-gradient(135deg, #020617, #1e3a8a);
+    }
+    .project.web {
+      background: linear-gradient(135deg, #020617, #7f1d1d);
+    }
+	.project.incident {
+     background: linear-gradient(135deg, #020617, #92400e);
+    }
+	.project.entnetwork {
+      background: linear-gradient(135deg, #020617, #3b82f6);
+    }
+	.project.app {
+      background: linear-gradient(135deg, #020617, #3b82f6);
+    }
+	.project.powershell {
+      background: linear-gradient(135deg, #020617, #7f1d1d);
+    }
+ .project.CIS {
+      background: linear-gradient(135deg, #020617, #7f1d1d);
+    }
+    .project h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+	
+	    /* Contact Section */
+	.contact-card {
+		background: linear-gradient(135deg, #020617, #0f172a);
+		text-align: center;
+	}
+
+	.contact-subtitle {
+	  color: #94a3b8;
+	  margin-bottom: 25px;
+	}
+
+	.contact-items {
+	  display: flex;
+	  flex-direction: column;
+	  gap: 15px;
+	  margin-bottom: 25px;
+	}
+
+	.contact-item {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  gap: 10px;
+	  padding: 12px;
+	  border-radius: 10px;
+	  text-decoration: none;
+	  color: #e2e8f0;
+	  transition: all 0.2s ease;
+	  background: rgba(255,255,255,0.02);
+	}
+
+	.contact-item:hover {
+	  transform: translateY(-3px);
+	  background: rgba(255,255,255,0.05);
+	}
+
+	.contact-item.mail i {
+	  color: #38bdf8;
+	}
+
+	.contact-item.linkedin i {
+	  color: #0a66c2;
+	}
+
+	.contact-actions {
+	  display: flex;
+	  justify-content: center;
+	  gap: 15px;
+	  flex-wrap: wrap;
+	}
+
+	.btn.primary {
+	  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+	  color: black;
+	}
+
+	.btn.secondary {
+	  background: transparent;
+	  border: 1px solid #38bdf8;
+	  color: #38bdf8;
+	}
+
+	.btn.secondary:hover {
+	  background: #38bdf8;
+	  color: black;
+	}
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #64748b;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #38bdf8;
+      color: black;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+    i[data-lucide] {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Icon colors per project */
+    .lab i { color: #60a5fa; }
+    .web i { color: #f87171; }
+    .network i { color: #34d399; }
+	
+	.lang.es { display:none; }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>
+    <i data-lucide="shield"></i>
+    Reudis Muñoz
+  </h1>
+  <p>Cybersecurity Engineer | Network Security Specialist | Future Policy Engineer</p>
+  
+  <div class="lang-toggle">
+    <button onclick="setLanguage('en')">EN</button>
+    <button onclick="setLanguage('es')">ES</button>
+  </div>
+  
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+	<a href="#Certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- about Section-->
+
+<section id="about">
+  <div class="card">
+    <h2>
+	  <span class="lang en">About Me</span>
+      <span class="lang es">Sobre Mí</span>
+	</h2>
+    <p>
+	<span class="lang en">Cybersecurity & Infrastructure Engineer focused on vulnerability management, secure systems design, defensive operations, and enterprise network security. Experienced in strengthening security posture through practical engineering, risk-driven controls, and continuous technical innovation.
+    </span>
+      <span class="lang es">Ingeniero de Ciberseguridad e Infraestructura enfocado en la gestión de vulnerabilidades, diseño de sistemas seguros, operaciones defensivas y seguridad de redes empresariales. Con experiencia en fortalecer la postura de seguridad mediante ingeniería práctica, controles basados en riesgos e innovación técnica continua.</span>
+    </p>
+  </div>
+</section>
+
+<!-- porjects Section-->
+
+<section id="projects">
+  <h2>
+    <span class="lang en">Projects</span>
+    <span class="lang es">Proyectos</span>
+  </h2>
+  <div class="projects">
+    <div class="project lab">
+    <h3><i data-lucide="server"></i>
+	  <span class="lang en">Home Lab Cyber Range</span>
+      <span class="lang es">Laboratorio Doméstico de Ciberseguridad (Cyber Range)</span>
+	</h3>
+      <p>
+	  <span class="lang en">Built a virtual lab using Kali Linux to simulate attacks and defenses.</span>
+	  <span class="lang es">Construí un laboratorio virtual utilizando Kali Linux para simular ataques y defensas.</span>
+	  </p>
+    </div>
+	<div class="project entnetwork">
+      <h3><i data-lucide="network"></i> 
+	  <span class="lang en"> Enterprise Network </span>
+	  <span class="lang es"> Red Empresarial </span>
+	  </h3>
+      <p>
+	   <span class="lang en">Built and managed a personal enterprise security lab with Active Directory, DNS/DHCP, and network segmentation.</span>
+	  <span class="lang es">Construí y administré un laboratorio personal de seguridad empresarial con Active Directory, DNS/DHCP y segmentación de red.</span>
+	  </p>
+    </div> 
+    </div>
+	<div class="project incident"> 
+      <h3><i data-lucide="alert-triangle"></i>  
+	  <span class="lang en">Incidents Management </span>  
+	  <span class="lang es">Respuesta a Incidentes </span>
+	   </h3>
+      <p>
+	    <span class="lang en">Simulated security incidents and attack scenarios to improve detection and response skills</span>
+		<span class="lang es">Simulé incidentes de seguridad y escenarios de ataque para mejorar las habilidades de detección y respuesta.</span>
+	  </p>
+	  
+    </div>
+	
+	<div class="project app"> 
+      <h3><i data-lucide="layout-dashboard"></i>  
+	  <span class="lang en">PCI DSS Compliant Secure Application</span>  
+	  <span class="lang es">Aplicación Segura Compatible con PCI DSS </span>
+	   </h3>
+      <p>
+	    <span class="lang en">Developed a secure application aligned with PCI DSS standards, implementing data protection controls, secure authentication, and vulnerability mitigation to ensure compliance and reduce security risk.</span>
+		<span class="lang es">Desarrollé una aplicación segura alineada con los estándares PCI DSS, implementando controles de protección de datos, autenticación segura y mitigación de vulnerabilidades para garantizar el cumplimiento y reducir el riesgo de seguridad.</span>
+	  </p>
+	  </div>
+	
+	<div class="project powershell"> 
+      <h3><i data-lucide="terminal"></i>  
+	  <span class="lang en">Active Directory Inactive Account Monitoring Script</span>  
+	  <span class="lang es">Script de Monitoreo de Cuentas Inactivas en Active Directory</span>
+	   </h3>
+      <p>
+	    <span class="lang en">Developed a PowerShell script to identify inactive user accounts based on login activity, improving access control visibility and reducing security risks.</span>
+		<span class="lang es">Desarrollé un script en PowerShell para identificar cuentas de usuario inactivas según la actividad de inicio de sesión, mejorando la visibilidad del control de accesos y reduciendo los riesgos de seguridad.</span>
+	  </p>
+	  </div>
+	  
+	  <div class="project CIS"> 
+      <h3><i data-lucide="lock"></i>  
+	  <span class="lang en">CIS-Based GPO Hardening for VDI Clients</span>  
+	  <span class="lang es">Endurecimiento de GPO Basado en CIS para Clientes VDI</span>
+	   </h3>
+		<p>
+	    <span class="lang en">Analyzed and developed a standardized Group Policy Object (GPO) aligned with CIS hardening benchmarks to secure client systems within Virtual Desktop Infrastructure (VDI) environments.
+		</span>
+		<span class="lang es">Analicé y desarrollé un Objeto de Directiva de Grupo (GPO) estandarizado, alineado con los benchmarks de endurecimiento de CIS, para asegurar sistemas cliente dentro de entornos de Infraestructura de Escritorio Virtual (VDI)</span>
+		</p>
+	  </div>
+	  
+	
+  </div>
+  
+  
+</section>
+
+<!-- expirience Section-->
+
+<section id="experience">
+  <div class="card expirience">
+    <h2>
+	  <i data-lucide="briefcase"></i>
+	  <span class="lang en">Experience</span>
+	  <span class="lang es">Experiencia</span>
+	</h2>
+<ul>
+
+  <li>
+    <span class="lang en">3+ years in IT and Cybersecurity</span>
+    <span class="lang es">Más de 3 años de experiencia en TI y Ciberseguridad</span>
+  </li>
+
+  <li>
+    <span class="lang en">Developed automation scripts for administrative and security validation tasks.</span>
+    <span class="lang es">Desarrollé scripts de automatización para tareas administrativas y validación de seguridad.</span>
+  </li>
+
+  <li>
+    <span class="lang en">Implemented system hardening and access control policies in Windows environments.</span>
+    <span class="lang es">Implementé endurecimiento de sistemas y políticas de control de acceso en entornos Windows.</span>
+  </li>
+
+  <li>
+    <span class="lang en">Performed vulnerability assessments and security testing using industry tools.</span>
+    <span class="lang es">Realicé evaluaciones de vulnerabilidades y pruebas de seguridad utilizando herramientas de la industria.</span>
+  </li>
+
+  <li>
+    <span class="lang en">Designed and secured network architectures with VLANs, routing, and firewall controls.</span>
+    <span class="lang es">Diseñé y aseguré arquitecturas de red utilizando VLANs, enrutamiento y controles de firewall.</span>
+  </li>
+
+</ul>
+  </div>
+</section>
+
+<!-- Certifications Section-->
+
+<section id="Certifications">
+  <div class="card cert">
+	<h2 style="display:flex; align-items:center; gap:10px;">
+	  <i data-lucide="award"></i>
+	  <span class="lang en">Certifications</span>
+	  <span class="lang es">Certificaciones</span>
+	</h2>
+    <ul>
+      <li>CompTIA Network+</li>
+      <li>Fortinet NSE 1-3</li>
+	  <li>CCNA (In Progress)</li>
+	  <li>CompTIA Security+ (In Progress)</li>
+	  <li>Cisco Ethical Hacking (In Progress)</li>
+	  <li>Cisco Cybersecurity Training</li>
+	  
+	  
+	  
+    </ul>
+  </div>
+</section>
+
+<!-- Contact Section-->
+<section id="contact">
+  <div class="card contact-card">
+    <h2>
+	  <i data-lucide="mail"></i>
+	  <span class="lang en">Contact</span>
+	  <span class="lang es">Contacto</span>
+	</h2>
+
+	<p class="contact-subtitle">
+	  <span class="lang en">Let's connect — I'm open to opportunities and collaborations.</span>
+	  <span class="lang es">Conectemos — estoy abierto a oportunidades y colaboraciones.</span>
+	</p>
+
+    <div class="contact-items">
+      <a href="mailto:reudys96@gmail.com" class="contact-item mail">
+        <i data-lucide="mail"></i>
+        <span>reudys96@gmail.com</span>
+      </a>
+
+      <a href="https:https://www.linkedin.com/in/reudis-munoz-reynoso/" target="_blank" class="contact-item linkedin">
+        <i data-lucide="linkedin"></i>
+    <span>
+		<span class="lang en">LinkedIn Profile</span>
+		<span class="lang es">Perfil de LinkedIn</span>
+    </span>
+      </a>
+    </div>
+	
+    <div class="contact-actions">
+	</a>
+      <a href="mailto:reudys96@gmail.com" class="btn secondary">
+	  <span class="lang en">Hire me</span>
+	  <span class="lang es">Contratame</span>
+	  
+	  </a>
+    </div>
+	
+  </div>
+</section>
+
+<!-- Script to change languages-->
+	<script>
+	function setLanguage(lang) {
+	  localStorage.setItem('lang', lang);
+
+	  document.querySelectorAll('.lang').forEach(el => {
+		el.style.display = el.classList.contains(lang) ? 'inline' : 'none';
+	  });
+
+	  
+	}
+	</script>
+	
+	<!-- script to create icons-->
+	<Script>
+	lucide.createIcons(); // 👈 ADD THIS
+	
+	</Script>
+
+<footer>
+  <p>© 2026 Reudis Muñoz</p>
+</footer>
+
+</body>
+</html>
